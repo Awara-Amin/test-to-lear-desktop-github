@@ -1,0 +1,50 @@
+{
+  "name": "@material-tailwind/react",
+  "homepage": "https://material-tailwind.com",
+  "version": "1.0.3",
+  "description": "@material-tailwind/react is an easy-to-use components library for ReactJS & Tailwind CSS inspired by Material Design.",
+  "repository": "https://github.com/creativetimofficial/material-tailwind",
+  "license": "MIT",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:ts": "tsc --declaration --declarationMap --emitDeclarationOnly",
+    "build": "swc ./src -d ./dist --only ./src/**/*.js --config-file .swcrc && cp ./package.json ./dist && cp ./README.md ./dist && cp ./LICENSE ./dist && npm run build:ts",
+    "lint:check": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
+    "prettier:check": "prettier -c ."
+  },
+  "dependencies": {
+    "@floating-ui/react-dom-interactions": "^0.3.1",
+    "classnames": "^2.3.1",
+    "deepmerge": "^4.2.2",
+    "downshift": "^6.1.7",
+    "framer-motion": "^6.2.8",
+    "material-ripple-effects": "^2.0.1",
+    "prop-types": "^15.8.1",
+    "react-merge-refs": "^1.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.170",
+    "@types/node": "^17.0.25",
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.6.3"
+  }
+}
